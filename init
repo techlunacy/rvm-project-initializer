@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# source ~/.rvm/bin/rvm
+source $HOME/.rvm/scripts/rvm
+touch .ruby-version
+touch .ruby-gemset
+result=${PWD##*/}
+version='ruby-2.0.0-latest'
+echo $result > .ruby-gemset
+echo $version > .ruby-version
+rvm install `echo $version`
+rvm use --create `echo $version`@`echo $result`
+gem install bundler
+bundle init
