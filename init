@@ -11,3 +11,4 @@ rvm install `echo $version`
 rvm use --create `echo $version`@`echo $result`
 gem install bundler
 bundle init
+git init
